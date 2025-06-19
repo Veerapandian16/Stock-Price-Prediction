@@ -1,113 +1,111 @@
 # Stock-Price-Prediction
 
-Stock Price Analysis and Prediction
-Project Overview
-This project analyzes historical stock price data for major tech companies (Apple, Google, Microsoft, Amazon) and predicts Apple's future stock prices using an LSTM neural network. The analysis includes visualizations of trading volumes, moving averages, daily returns, and correlations, with predictive modeling to forecast Apple's closing prices.
-Features
+🏠 Housing Price Prediction using Linear Regression
+This project focuses on predicting housing prices using multiple linear regression.It includes *data cleaning, preprocessing, exploratory data analysis (EDA), feature scaling, model building, and *model evaluation.
 
-Data Collection: Fetches historical stock data using the yfinance library for the past year.
-Visualizations:
-Plots of daily trading volumes for each company.
-Moving averages (10, 20, 50 days) for stock closing prices.
-Daily return percentage plots and histograms.
-Correlation analysis with heatmaps and pair plots.
+📁 Dataset Overview
+The dataset contains housing-related features used to predict house prices. It includes numerical and categorical variables such as square footage, number of bedrooms, location, and more. The target variable is the house price (continuous).
+🛠️ Features
 
+Data Cleaning: Handles missing values, outliers, and inconsistent data.
+Preprocessing: Encodes categorical variables and scales numerical features.
+Exploratory Data Analysis (EDA): Visualizes feature distributions, correlations, and relationships with the target variable.
+Model Building: Implements multiple linear regression using scikit-learn.
+Model Evaluation: Assesses performance using metrics like Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R² score.
 
-Prediction Model:
-Uses an LSTM neural network to predict Apple's stock prices.
-Trains on 95% of historical data (2012–2023) and tests on the remaining 5%.
-
-
-Performance Metrics: Calculates RMSE as a percentage of the average closing price.
-
-Requirements
+📋 Requirements
 
 Python 3.x
 Libraries:
-yfinance
 pandas
 numpy
 matplotlib
 seaborn
-keras
 scikit-learn
 
 
 
 Install dependencies using:
-pip install yfinance pandas numpy matplotlib seaborn keras scikit-learn
+pip install pandas numpy matplotlib seaborn scikit-learn
 
-Usage
+🚀 Usage
 
 Clone the Repository:
 git clone <repository_url>
 cd <repository_directory>
 
 
+Prepare the Dataset:
+
+Place the housing dataset (e.g., housing.csv) in the project directory.
+Update the file path in the script if necessary.
+
+
 Run the Script:
 
-Execute the main Python script (e.g., stock_analysis.py) in a Jupyter notebook or Python environment.
-Ensure you have an internet connection for yfinance to fetch stock data.
+Execute the main Python script (e.g., housing_prediction.py) in a Jupyter notebook or Python environment.
+Ensure the dataset is accessible.
 
 
 Expected Outputs:
 
-Dataframes with stock data for AAPL, GOOG, MSFT, AMZN.
-Visualizations (saved or displayed) for volume, moving averages, daily returns, and correlations.
-Predicted Apple stock prices with RMSE evaluation.
+Cleaned and preprocessed dataset.
+Visualizations (e.g., correlation heatmaps, scatter plots, histograms).
+Model performance metrics (MSE, RMSE, R²).
+Predicted house prices for test data.
 
 
 
-Data
+📊 Data
 
-Source: Yahoo Finance via yfinance.
-Time Period:
-General analysis: Past 1 year (from current date).
-Prediction model: 2012–2023 for Apple (AAPL).
-
-
-Features Used:
-Closing prices, trading volumes, moving averages, daily returns.
-Scaled closing prices for LSTM input.
+Source: User-provided housing dataset (e.g., Kaggle's Housing Prices dataset or similar).
+Features: Examples include square footage, number of bedrooms, bathrooms, lot size, year built, and location-based features.
+Target: House price (continuous variable, typically in USD).
+Preprocessing Steps:
+Impute missing values (e.g., mean/median for numerical, mode for categorical).
+Encode categorical variables (e.g., one-hot encoding).
+Scale numerical features using StandardScaler or MinMaxScaler.
 
 
 
-Model Architecture
+🧠 Model Architecture
 
-LSTM Model:
-Two LSTM layers (128 and 64 units).
-Two Dense layers (25 units and 1 unit for output).
-Trained with Adam optimizer and mean squared error loss.
-Input: 60-day sequences of scaled closing prices.
-Output: Predicted closing price for the next day.
+Algorithm: Multiple Linear Regression.
+Implementation: Scikit-learn's LinearRegression model.
+Input: Preprocessed features (numerical and encoded categorical).
+Output: Predicted house price.
+Training: 80% train, 20% test split (adjustable).
+Feature Selection: Optional correlation-based or statistical feature selection to improve model performance.
 
+📈 Results
 
-
-Results
-
-Visualizations: Provide insights into stock trends, volatility, and correlations.
-Prediction Performance:
-RMSE as a percentage of average closing price: ~11.58%.
-Predictions are based on historical patterns and may not account for external market factors.
-
+Visualizations: Insights into feature distributions, correlations, and price relationships.
+Performance Metrics:
+Mean Squared Error (MSE): Measures average squared difference between predicted and actual prices.
+Root Mean Squared Error (RMSE): Provides error magnitude in the same units as the target.
+R² Score: Indicates the proportion of variance explained by the model.
 
 
-Limitations
+Predictions: Accurate house price predictions based on input features (performance depends on data quality).
 
-The model relies on historical data and may not capture sudden market changes.
-yfinance data may have occasional gaps or inconsistencies.
-LSTM predictions assume stationarity in patterns, which may not always hold.
+⚠️ Limitations
 
-Future Improvements
+Assumes linear relationships between features and house prices, which may not always hold.
+Sensitive to outliers and noisy data.
+Performance depends on feature selection and data quality.
+Does not account for external factors (e.g., market trends, economic conditions).
 
-Incorporate additional features (e.g., technical indicators, sentiment analysis).
-Experiment with other models (e.g., ARIMA, Transformer-based models).
-Extend the analysis to include real-time data or more companies.
+🔮 Future Improvements
 
-License
+Experiment with non-linear models (e.g., Random Forest, Gradient Boosting).
+Incorporate advanced feature engineering (e.g., interaction terms, polynomial features).
+Add cross-validation for robust model evaluation.
+Integrate external data (e.g., neighborhood demographics, interest rates).
+
+📜 License
 This project is licensed under the MIT License.
-Acknowledgments
+🙏 Acknowledgments
 
-Data provided by Yahoo Finance via yfinance.
-Built with Python, Keras, and data visualization libraries.
+Built with Python, scikit-learn, and data visualization libraries.
+Inspired by real-world housing price prediction challenges (e.g., Kaggle competitions).
 
